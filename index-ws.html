@@ -1,7 +1,26 @@
-<div style="display: block; margin: 2em auto; padding: 1em; border: 1px solid #888; text-align: center;">
-	
-	<h1> WTF</h1>
+<!DOCTYPE html>
 
-	<p> Impressive</p>
+<head>
 
-</div>
+</head>
+
+<body>
+
+	<div style="display: block; margin: 2em auto; padding: 1em; border: 1px solid #888; text-align: center;">
+
+		<h1> WTF</h1>
+
+		<p> Impressive</p>
+
+	</div>
+</body>
+<script>
+
+	let ws;
+	const proto = window.location.protocol === 'https' ? 'wss' : 'ws';
+	ws = new WebSocket(`${proto}://${window.location.host}`);
+
+	ws.onmessage = (event) => { console.log(event.data) }
+</script>
+
+</html>
